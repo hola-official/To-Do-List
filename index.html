@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com.css? family=Poppins&display=swap" ref="stylesheet" />
+    <link rel="stylesheet" href="style.css">
+    <title>TodoList</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="title">
+            <h1>To-Do List</h1>
+            <i class="fa-solid fa-book"></i>
+            <p id="datetime"></p>
+        </div>
+        <div class="search-box">
+            <input type="text" id="taskInput" placeholder="Add a new task" required>
+            <input type="date" id="date">
+            <input type="time" id="time">
+            <textarea id="description" placeholder="Enter description" required></textarea>
+            <button onclick="addTask()">Add</button>
+        </div>
+        <div class="result">
+            <ul id="taskList">
+                <!-- <li class="checked"><strong>Task:</strong><span> ${taskText}</span></li>    
+                <li><strong>Description:</strong><span> ${descriptionText}</span></li>
+                <li><strong>Date:</strong><span> ${dateText}</span></li>
+                <li><strong>Time:</strong><span> ${timeText}</span></li></li> -->
+            </ul>
+        </div>
+    </div>
+    <script src="https://kit.fontawesome.com/80089b956d.js" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
