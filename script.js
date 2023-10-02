@@ -1,4 +1,4 @@
-// Step 1: Get references to the required HTML elements
+//Get references to the required HTML elements
 const datetimeElement = document.getElementById("datetime");
 const taskInput = document.getElementById("taskInput");
 const descriptionInput = document.getElementById("description");
@@ -6,19 +6,19 @@ const dateInput = document.getElementById("date");
 const timeInput = document.getElementById("time");
 const taskList = document.getElementById("taskList");
 
-// Step 2: Define a function to update the date and time
+// Define a function to update the date and time
 const updateDateTime = () => {
     const datetime = new Date();
     datetimeElement.innerText = datetime.toLocaleString();
 };
 
-// Step 3: Set an interval to update date and time every second
+// Set an interval to update date and time every second
 setInterval(updateDateTime, 1000);
 
-// Step 4: Update date and time initially
+// Update date and time initially
 updateDateTime();
 
-// Step 5: Define a function to add a new task
+// Define a function to add a new task
 const addTask = () => {
     // Retrieve values from input fields
     const taskText = taskInput.value;
@@ -52,7 +52,7 @@ const addTask = () => {
     }
 };
 
-// Step 6: Define a function to remove a task
+// Define a function to remove a task
 const removeTask = (button) => {
     // Remove the parent element (task item) of the clicked button
     taskList.removeChild(button.parentElement);
@@ -61,13 +61,13 @@ const removeTask = (button) => {
     saveData();
 };
 
-// Step 7: Define a function to save the task list data
+// Define a function to save the task list data
 const saveData = () => {
     // Store the inner HTML of the task list in localStorage
     localStorage.setItem('data', taskList.innerHTML);
 };
 
-// Step 8: Define a function to load saved data from localStorage
+// Define a function to load saved data from localStorage
 const loadData = () => {
     const savedData = localStorage.getItem('data');
     if (savedData) {
@@ -76,5 +76,5 @@ const loadData = () => {
     }
 };
 
-// Step 9: Load saved data on page load
+// Load saved data on page load
 loadData();
