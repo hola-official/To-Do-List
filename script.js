@@ -1,4 +1,4 @@
-//Get references to the required HTML elements
+//Getting references to the required HTML elements
 const datetimeElement = document.getElementById("datetime");
 const taskInput = document.getElementById("taskInput");
 const descriptionInput = document.getElementById("description");
@@ -6,27 +6,28 @@ const dateInput = document.getElementById("date");
 const timeInput = document.getElementById("time");
 const taskList = document.getElementById("taskList");
 
-// Define a function to update the date and time
+//To define a function to update the date and time
 const updateDateTime = () => {
     const datetime = new Date();
     datetimeElement.innerText = datetime.toLocaleString();
 };
 
-// Set an interval to update date and time every second
+//To set an interval to update date and time every second
 setInterval(updateDateTime, 1000);
 
-// Update date and time initially
+// Updating date and time initially
 updateDateTime();
 
-// Define a function to add a new task
+// To define a function to add a new task
 const addTask = () => {
     const taskText = taskInput.value;
     const descriptionText = descriptionInput.value;
     const dateText = dateInput.value;
     const timeText = timeInput.value;
 
-    if (taskText !== "") {
-        // Create a new task item
+    if (taskText === "") {
+        alert('Kindly fill in the input field')
+    } else {
         const taskItem = document.createElement("li");
         taskItem.innerHTML = `
           <span><strong>Task:</strong> ${taskText}</span>
