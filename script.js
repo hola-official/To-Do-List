@@ -55,7 +55,6 @@ const removeTask = (button) => {
     // Remove the parent element (task item) of the clicked button
     taskList.removeChild(button.parentElement);
 
-    // Save the updated data
     saveData();
 };
 
