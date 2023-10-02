@@ -20,13 +20,11 @@ updateDateTime();
 
 // Define a function to add a new task
 const addTask = () => {
-    // Retrieve values from input fields
     const taskText = taskInput.value;
     const descriptionText = descriptionInput.value;
     const dateText = dateInput.value;
     const timeText = timeInput.value;
 
-    // Check if task text is not empty
     if (taskText !== "") {
         // Create a new task item
         const taskItem = document.createElement("li");
