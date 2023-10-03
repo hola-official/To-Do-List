@@ -1,5 +1,5 @@
-//Getting references to the required HTML elements
-const datetimeElement = document.getElementById("datetime");
+//Making references to the required HTML elements
+const datetimeEl = document.getElementById("datetime");
 const taskInput = document.getElementById("taskInput");
 const descriptionInput = document.getElementById("description");
 const dateInput = document.getElementById("date");
@@ -9,13 +9,12 @@ const taskList = document.getElementById("taskList");
 //To define a function to update the date and time
 const updateDateTime = () => {
     const datetime = new Date();
-    datetimeElement.innerText = datetime.toLocaleString();
+    datetimeEl.innerText = datetime.toLocaleString();
 };
 
 //To set an interval to update date and time every second
 setInterval(updateDateTime, 1000);
 
-// Updating date and time initially
 updateDateTime();
 
 // To define a function to add a new task
@@ -26,7 +25,7 @@ const addTask = () => {
     const timeText = timeInput.value;
 
     if (taskText === "") {
-        alert('Kindly fill in the input field')
+        alert("Kindly fill in the input field");
     } else {
         const taskItem = document.createElement("li");
         taskItem.innerHTML = `
@@ -34,42 +33,41 @@ const addTask = () => {
           <span><strong>Description:</strong> ${descriptionText}</span>
           <span><strong>Date:</strong> ${dateText}</span>
           <span><strong>Time:</strong> ${timeText}</span>
-          <button onclick="removeTask(this)">Remove</button>
+          <button onclick="removeTask(this)"><i class="fa-solid fa-trash"></i></button>
         `;
 
         // Append the task item to the task list
         taskList.appendChild(taskItem);
 
-        // Clear input fields
         taskInput.value = "";
         descriptionInput.value = "";
         dateInput.value = "";
         timeInput.value = "";
 
-        // Save the updated data
+        // Save the once reload data
         saveData();
     }
 };
 
-// Define a function to remove a task
+// To define a function to remove a task
 const removeTask = (button) => {
-    // Remove the parent element (task item) of the clicked button
+    // To remove the parent element (task item) of the clicked button
     taskList.removeChild(button.parentElement);
 
     saveData();
 };
 
-// Define a function to save the task list data
+// To define a function to save the task list data
 const saveData = () => {
-    // Store the inner HTML of the task list in localStorage
-    localStorage.setItem('data', taskList.innerHTML);
+    // Storing the inner HTML of the task list in localStorage
+    localStorage.setItem("data", taskList.innerHTML);
 };
 
-// Define a function to load saved data from localStorage
+// To define a function to load saved data from localStorage
 const loadData = () => {
-    const savedData = localStorage.getItem('data');
+    const savedData = localStorage.getItem("data");
     if (savedData) {
-        // Populate the task list with the saved data
+        // Populating the task list with the saved data
         taskList.innerHTML = savedData;
     }
 };

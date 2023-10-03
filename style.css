@@ -65,13 +65,14 @@ body {
     width: 80%;
     background: #cbc7c7c7;
     /* background: transparent; */
-    /* border-bottom: 4px solid var(--main-color); */
+    border-bottom: 2px solid var(--main-color);
     font-size: 18px;
     border-radius: 8px;
 }
 
 .search-box button {
     cursor: pointer;
+    color: #fff;
     width: 110px;
     height: 47px;
     font-size: 20px;
@@ -83,7 +84,7 @@ body {
 
 ul li {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     flex-direction: column;
     gap: 5px;
     position: relative;
@@ -93,9 +94,8 @@ ul li {
     border-bottom: 2px solid var(--main-color);
 }
 
-
 ul li::before {
-    content: '';
+    content: "";
     position: absolute;
     height: 28px;
     width: 28px;
@@ -105,7 +105,6 @@ ul li::before {
 }
 
 li button {
-    width: 100%;
     padding: 8px;
     margin-top: 10px;
     color: #1c1c1c;
@@ -125,4 +124,9 @@ ul li .result {
     width: 40px;
     height: 20px;
     margin-bottom: 20px;
+}
+
+strong,
+span {
+    font-size: 15px;
 }
