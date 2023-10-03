@@ -107,7 +107,7 @@ ul li::before {
 li button {
     padding: 8px;
     margin-top: 10px;
-    color: #1c1c1c;
+    color: #fff;
     font-size: 18px;
     cursor: pointer;
     border-radius: 10px;
