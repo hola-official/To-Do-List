@@ -72,7 +72,7 @@ body {
 
 .search-box button {
     cursor: pointer;
-    color: #fff;
+    color: #1c1c1c;
     width: 110px;
     height: 47px;
     font-size: 20px;
@@ -80,6 +80,12 @@ body {
     border-radius: 10px;
     margin-bottom: 20px;
     background: var(--main-color);
+    transition: 0.5s all;
+}
+
+.search-box button:hover {
+    background: #1fa1d4;
+    color: #fff;
 }
 
 ul li {
